@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+<link rel="stylesheet" href="home.css">
+<title>CHEMISTRY</title>
+
+
+<!-- ********** New Scripts *********-->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js"></script>
+<!-- ********** End Of New Scripts *********-->
+</head>
+<body>
+    <!--   Firebase App Default    -->
+    <script>
+        var firebaseConfig = {
+    apiKey: "AIzaSyB9LL3H4rvi62pVk5BSnz4o9ZtmQUK3UX0",
+    authDomain: "chem-website-dd000.firebaseapp.com",
+    databaseURL: "https://chem-website-dd000.firebaseio.com",
+    projectId: "chem-website-dd000",
+    storageBucket: "chem-website-dd000.appspot.com",
+    messagingSenderId: "913993521001",
+    appId: "1:913993521001:web:cc861068df2ff6ef640ff8",
+    measurementId: "G-HQJZWPWJD0"
+  };
+  
+  firebase.initializeApp(firebaseConfig);
+  firebase.auth.Auth.Persistence.LOCAL;
+    </script>
+    <!--   Firebase App Default    -->
+
+    <input type="checkbox" id="check">
+    <!-- header area start -->
+    <header>
+        <label for="check">
+            <i class="fa fa-bars" id="sidebar_btn"></i>
+        </label>
+        <div class="left_area">
+            <h3>The&nbsp;&nbsp;<span>Chemists</span></h3>
+        </div>
+        <div class="dropdown navbar-right">
+            <button id="option-id" class="btn btn-light dropdown-toggle bg-dark text-white" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Options
+            </button>
+            <div class="dropdown-menu" aria-labelledby="option-id">
+                <a href="" class="dropdown-item" id="btn-logout">
+                    Logout
+                </a>
+            </div>
+        </div>
+        
+    </header>
+    <!--header area end  -->
+
+    <!-- sidebar start -->
+    <div class="sidebar">
+        <center>
+            <img src="gscs.home.jpg" class="profile_image" alt="">
+            <h4>GSCS</h4>
+        </center>
+            <ul>
+                <li><a href="#"><i class="fa fa-desktop" aria-hidden="true"></i><span><b>Dashboard</b></span></a></li>
+                <li><a onclick="switchView('slides.html')"><i class="fa fa-book" aria-hidden="true"></i><span><b>Slides</b></span></a></li>
+                <li><a onclick="switchView('lecturers.html')"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span><b>Lecturers</b></span></a></li>
+                <li><a onclick="switchView('executives.html')"><i class="fa fa-users" aria-hidden="true"></i></i><span><b>Executives</b></span></a></li>
+                <li><a href="#"><i class="fa fa-cogs" aria-hidden="true"></i><span><b>Settings</b></span></a></li>
+            </ul>
+    </div> 
+    <!-- sidebar end -->
+
+    <div id="container" class="content"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+<!-- ********** Signin and SignUp System ********* -->
+<script src="index.js"></script>
+<script>
+    firebase.auth().onAuthStateChanged(function(user){
+        if (!user){
+            window.location.href = "index.html";
+        }
+    });
+</script>
+<!-- ********** Signin and SignUp System ********* -->
+</body>
+</html>

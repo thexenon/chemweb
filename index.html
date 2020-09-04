@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+<link rel="stylesheet" href="sign.css">
+<title>CHEMISTRY</title>
+
+
+<!-- ********** New Scripts *********-->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js"></script>
+<!-- ********** End Of New Scripts *********-->
+</head>
+<body>
+        <!--   Firebase App Default    -->
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyB9LL3H4rvi62pVk5BSnz4o9ZtmQUK3UX0",
+            authDomain: "chem-website-dd000.firebaseapp.com",
+            databaseURL: "https://chem-website-dd000.firebaseio.com",
+            projectId: "chem-website-dd000",
+            storageBucket: "chem-website-dd000.appspot.com",
+            messagingSenderId: "913993521001",
+            appId: "1:913993521001:web:cc861068df2ff6ef640ff8",
+            measurementId: "G-HQJZWPWJD0"
+        };
+      
+      firebase.initializeApp(firebaseConfig);
+      firebase.auth.Auth.Persistence.LOCAL;
+    </script>
+    <!--   Firebase App Default    -->
+
+    <div class="content">
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick="signin()">Sign In</button>
+                <button type="button" class="toggle-btn" onclick="signup()">Sign Up</button>
+            </div>
+            <div class="knust-logo">
+                <img src="knust.sign.png">
+                <img src="gscs.sign.jpg">
+                <img src="cos.sign.jpg">
+            </div>           
+        <form id="signin" class="input-group">
+                <div><input id="inemail" type="email" class="input-field" placeholder="User Id" required></div>
+                <div><input id="inpassword" type="password" class="input-field" placeholder="Enter Password" required></div>
+                <div><input type="checkbox" class="check-box"><span>Remember Password</span></div>
+                <button id="btn-signin" class="submit-btn" type="button">Sign In</button>
+        </form>
+        <form id="signup" class="input-group">
+                <div><input id="upemail" type="email" class="input-field" placeholder="Email Id" required></div>
+                <div><input id="uppassword" type="password" class="input-field" placeholder="Enter Password" required></div>
+                <div><input id="upcpassword" type="password" class="input-field" placeholder="Confirm Password" required></div>
+                <div><input type="checkbox" class="check-box"><span>I agree to the terms & conditions</span></div>
+                    <button id="btn-signup" class="submit-btn" type="button">Sign Up</button>
+        </form>
+
+                
+            
+        </div>
+    </div>
+    <script>
+        var x = document.getElementById("signin")
+        var y = document.getElementById("signup")
+        var z = document.getElementById("btn")
+
+        function signup(){
+            x.style.left = "-400px";
+            y.style.left = "50px";
+            z.style.left = "110px";
+        }
+        function signin(){
+            x.style.left = "50px";
+            y.style.left = "450px";
+            z.style.left = "0";
+        }
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
+
+    <!-- ********** Signin and SignUp System ********* -->
+    <script src="index.js"></script>
+    <script>
+        firebase.auth().onAuthStateChanged(function(user){
+            if (user){
+                window.location.href = "home.html";
+            }
+        });
+    </script>
+    <!-- ********** Signin and SignUp System ********* -->
+</body>
+</html>
