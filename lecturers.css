@@ -22,13 +22,14 @@ h3{
 .container{
     width: 100%;
     background: transparent;
+    background: url(background\ \(3\).home.jpg);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-columns: minmax(100px, auto);
 
 }
 .gallery{
-    margin: 10px;
+    margin: 40px;
     box-shadow: 0 2px 20px rgb(63, 62, 62);
     padding: 15px;
     color: #fff;
