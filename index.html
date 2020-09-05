@@ -16,6 +16,7 @@
 <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-database.js"></script>
 <!-- ********** End Of New Scripts *********-->
 </head>
 <body>
@@ -92,7 +93,14 @@
     <script>
         firebase.auth().onAuthStateChanged(function(user){
             if (user){
-                window.location.href = "home.html";
+                var userID = firebase.auth().currentUser.uid;
+                firebase.database().ref('Users/' + userID).once('value').then(function(snapshot){
+                    if (snapshot.val()){
+                        window.location.href = "home.html";
+                    } else {
+                        window.location.href = "accountsetting.html"
+                    }
+                }); 
             }
         });
     </script>

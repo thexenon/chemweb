@@ -99,3 +99,38 @@ span{
 #signup{
     left: 450px;
 }
+
+
+
+/* Account Settings */
+.forms {
+    background-color: #5c5155;
+    width: 390px;
+    height: 490px;
+    position: relative;
+    margin: 6% auto;
+    padding: 5px;
+    overflow: auto;
+    border-radius: 30px;
+}
+.form-control {
+    width: 90%;
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
+    color: white;
+}
+.form-group input, .form-group textarea {
+    background-color: burlywood;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+.form-control button {
+    font-size: 30px;
+    width: 90%;
+    border-radius: 20px;
+    background: linear-gradient(to right, #ff105f, #ffad06);
+}

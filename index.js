@@ -1,5 +1,3 @@
-
-
   $("#btn-signin").click(function(){
         var email = $("#inemail").val();
         var password = $("#inpassword").val();
@@ -41,17 +39,6 @@
         }else {
             window.alert("Please fill all fields.");
         }
-  });
-
-  $("#btn-logout").click(function()
-  {
-    firebase.auth().signOut().then(function() {
-      // Sign-out successful.
-      console.log("Sign Out sucessfull");
-    }).catch(function(error) {
-      // An error happened.
-      console.log("Error occurred.");
-    });
   });
 
 

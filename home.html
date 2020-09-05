@@ -16,6 +16,7 @@
 <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-database.js"></script>
 <!-- ********** End Of New Scripts *********-->
 </head>
 <body>
@@ -46,16 +47,6 @@
         <div class="left_area">
             <h3>The&nbsp;&nbsp;<span>Chemists</span></h3>
         </div>
-        <div class="dropdown navbar-right">
-            <button id="option-id" class="btn btn-light dropdown-toggle bg-dark text-white" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Options
-            </button>
-            <div class="dropdown-menu" aria-labelledby="option-id">
-                <a href="" class="dropdown-item" id="btn-logout">
-                    Logout
-                </a>
-            </div>
-        </div>
         
     </header>
     <!--header area end  -->
@@ -71,7 +62,7 @@
                 <li><a onclick="switchView('slides.html')"><i class="fa fa-book" aria-hidden="true"></i><span><b>Slides</b></span></a></li>
                 <li><a onclick="switchView('lecturers.html')"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span><b>Lecturers</b></span></a></li>
                 <li><a onclick="switchView('executives.html')"><i class="fa fa-users" aria-hidden="true"></i></i><span><b>Executives</b></span></a></li>
-                <li><a href="#"><i class="fa fa-cogs" aria-hidden="true"></i><span><b>Settings</b></span></a></li>
+                <li><a onclick="switchView('settings.html')"><i class="fa fa-cogs" aria-hidden="true"></i><span><b>Settings</b></span></a></li>
             </ul>
     </div> 
     <!-- sidebar end -->

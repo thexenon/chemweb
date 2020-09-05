@@ -1,0 +1,67 @@
+
+<div id="infoUser">
+
+</div>
+
+    
+    <script>
+        var user = firebase.auth().currentUser;
+        var dbBlogs = firebase.database().ref().child("Users").orderByChild("uid").equalTo(user.uid);
+    dbBlogs.on("value", function(info){
+        if (info.exists()){
+            var blogsHtml = "";
+            info.forEach(function(singleBlog){
+                blogsHtml += "<div class='accbox'>";
+                    blogsHtml += "<div><img style= 'width:70%; height: 400px;' src= '";
+                        blogsHtml += singleBlog.val().image;
+                    blogsHtml += "'></div><br>";
+
+                    blogsHtml += "<div>";
+                        blogsHtml += "<div><h2>"
+                                    + singleBlog.val().surname + ", "
+                                    + singleBlog.val().othername
+                                    + "</h2></div>"
+                    blogsHtml += "</div>";
+
+                    blogsHtml += "<div>";
+                        blogsHtml += "<div><h3>"
+                                    + "Year: " + singleBlog.val().year + "<br>"
+                                    + "Index Number: " + singleBlog.val().indexnumber + "<br>"
+                                    + "Student Number: " + singleBlog.val().referencenumber
+                                    + "</h3></div>"
+                    blogsHtml += "</div>";
+
+                    blogsHtml += "<div class= 'accbio'><h3>";
+                        blogsHtml += singleBlog.val().bio;
+                    blogsHtml += "</h3></div>";
+
+                    blogsHtml += "<div><button class= 'accbtn' onclick= 'logout()'>";
+                        blogsHtml += "LogOut";
+                    blogsHtml += "</button></div>";
+                
+                $("#infoUser").html(blogsHtml);
+            });
+
+            
+        }
+    });
+
+
+
+
+
+
+
+
+
+    
+    function logout(){
+        firebase.auth().signOut().then(function() {
+        // Sign-out successful.
+        console.log("Sign Out sucessfull");
+        }).catch(function(error) {
+        // An error happened.
+        console.log("Error occurred.");
+        });
+    };
+</script>
