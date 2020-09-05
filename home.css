@@ -175,6 +175,14 @@ ul li:hover ul li {
     overflow: hidden;
     border-radius: 30px;
     font-weight: bold;
+    color: black;
+}
+.accbox img {
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
 }
 .accbio {
     background-color: skyblue;
