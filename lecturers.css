@@ -21,7 +21,6 @@ h3{
 
 .container{
     width: 100%;
-    background: transparent;
     background: url(background\ \(3\).home.jpg);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -51,4 +50,7 @@ h4{
 p{
     text-align: center;
     line-height: 15px;
+}
+.content {
+    
 }

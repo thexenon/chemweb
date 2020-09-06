@@ -102,7 +102,7 @@ label #sidebar_btn:hover{
     background: url(background\ \(3\).home.jpg) no-repeat;
     background-position: center;
     background-size: cover;
-    height: 100ch;
+    min-height: 100ch;
     transition: 0.5s;
 }
 
@@ -207,4 +207,9 @@ ul li:hover ul li {
     -moz-border-radius: 50px;
     -ms-border-radius: 50px;
     -o-border-radius: 50px;
+}
+
+/* Footer */
+footer div h3, footer div h4 {
+    font-size: 1em;
 }
