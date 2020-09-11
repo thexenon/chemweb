@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="./dashboard.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-storage.js"></script>
+</head>
+<body>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyB9LL3H4rvi62pVk5BSnz4o9ZtmQUK3UX0",
+            authDomain: "chem-website-dd000.firebaseapp.com",
+            databaseURL: "https://chem-website-dd000.firebaseio.com",
+            projectId: "chem-website-dd000",
+            storageBucket: "chem-website-dd000.appspot.com",
+            messagingSenderId: "913993521001",
+            appId: "1:913993521001:web:cc861068df2ff6ef640ff8",
+            measurementId: "G-HQJZWPWJD0"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.auth.Auth.Persistence.LOCAL;
+    </script>
+
+
+    
+
+
+    
+<div id="dashboard-ml">
+
+</div>
+<br>
+<div id="dashboard-fl">
+
+</div>
+<br>
+
+    
+    <script>
+        var dbBlogs = firebase.database().ref().child("Personality Of The Week").orderByChild("gender").equalTo("Male");
+        dbBlogs.on("value", function(potw){
+            if (potw.exists()){
+                var blogsHtml = "";
+                potw.forEach(function(singleBlog){
+                    blogsHtml += "<div class='dash-box'>";
+                        blogsHtml += "<div class='news-head'>";
+                            blogsHtml += "<h1>Male Personality Of The Week</h1>";
+                        blogsHtml += "</div>";
+
+                        blogsHtml += "<div class='news-img'><img style= 'width:400px; height: 400px;' src= '";
+                            blogsHtml += singleBlog.val().image;
+                        blogsHtml += "'></div>";
+
+                        blogsHtml += "<div class='news-letter'>";
+                            blogsHtml += "<h2>" + singleBlog.val().personName + "</h2>";
+                        blogsHtml += "<div class='person-bio'><h3><u><b>Bio</b></u></h3><p>";
+                            blogsHtml += singleBlog.val().bio;
+                        blogsHtml += "</p></div>";
+
+                        blogsHtml += "<div class='list-of-records'><h3><u><b>Records & Achievements</b></u></h3>";
+                            blogsHtml += "<ul type='square'>"
+                                        + "<li>" + singleBlog.val().achieve1 + "</li>"
+                                        + "<li>" + singleBlog.val().achieve2 + "</li>"
+                                        + "<li>" + singleBlog.val().achieve3 + "</li>"
+                                        + "<li>" + singleBlog.val().achieve4 + "</li>"
+                                        + "<li>" + singleBlog.val().achieve5 + "</li>"
+                            blogsHtml += "</ul>";
+                        blogsHtml += "</div>";
+
+                        blogsHtml += "<div class='clear'></div>"
+                    blogsHtml += "<div><br>";
+                    
+                    $("#dashboard-ml").html(blogsHtml);
+                });
+
+                
+            }
+        });
+
+    </script>
+
+<script>
+    var dbBlogs = firebase.database().ref().child("Personality Of The Week").orderByChild("gender").equalTo("Female");
+    dbBlogs.on("value", function(potw){
+        if (potw.exists()){
+            var blogsHtml = "";
+            potw.forEach(function(singleBlog){
+                blogsHtml += "<div class='dash-box'>";
+                    blogsHtml += "<div class='news-head'>";
+                        blogsHtml += "<h1>Female Personality Of The Week</h1>";
+                    blogsHtml += "</div>";
+
+                    blogsHtml += "<div class='news-img'><img style= 'width:400px; height: 400px;' src= '";
+                        blogsHtml += singleBlog.val().image;
+                    blogsHtml += "'></div>";
+
+                    blogsHtml += "<div class='news-letter'>";
+                        blogsHtml += "<h2>" + singleBlog.val().personName + "</h2>";
+                        blogsHtml += "<div class='person-bio'><h3><u><b>Bio</b></u></h3><p>";
+                            blogsHtml += singleBlog.val().bio;
+                        blogsHtml += "</p></div>";
+
+                        blogsHtml += "<div class='list-of-records'><h3><u><b>Records & Achievements</b></u></h3>";
+                        blogsHtml += "<ul>"
+                                    + "<li>" + singleBlog.val().achieve1 + "</li>"
+                                    + "<li>" + singleBlog.val().achieve2 + "</li>"
+                                    + "<li>" + singleBlog.val().achieve3 + "</li>"
+                                    + "<li>" + singleBlog.val().achieve4 + "</li>"
+                                    + "<li>" + singleBlog.val().achieve5 + "</li>"
+                                    + "</ul>"
+                    blogsHtml += "</div>";
+
+                    blogsHtml += "<div class='clear'></div>"
+                blogsHtml += "<div><br>";
+                
+                $("#dashboard-fl").html(blogsHtml);
+            });
+
+            
+        }
+    });
+
+</script>
+
+</body>
+</html>
