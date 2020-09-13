@@ -138,7 +138,7 @@
                                 var newUserRef = databaseRef.child("Female");
 
                                 uploadTask.snapshot.ref.getDownloadURL().then(function(downloadUrl){
-                                    if (personName != "" && achieve1 != "" && achieve2 != "" && achieve3 != "" && achieve4 != "" && achieve5 != "" && bio != ""){
+                                    if (personName != "" && bio != "" && achieve1 != "" && achieve2 != "" && achieve3 != "" || achieve4 != "" || achieve5 != ""){
                                         var userData = {
                                             "image": downloadUrl,
                                             "personName": personName,
