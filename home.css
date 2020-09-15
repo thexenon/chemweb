@@ -97,7 +97,7 @@ label #sidebar_btn:hover{
     width: 80px;
 }
 
-.content{
+.content {
     margin-left: 250px;
     background: url(background\ \(3\).home.jpg) no-repeat;
     background-position: center;
@@ -105,7 +105,9 @@ label #sidebar_btn:hover{
     min-height: 100ch;
     transition: 0.5s;
 }
-
+#container {
+    min-height: 100ch;
+}
 
 #check:checked ~ .content{
     margin-left: 60px;
