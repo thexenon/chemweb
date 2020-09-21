@@ -215,3 +215,28 @@ ul li:hover ul li {
 footer div h3, footer div h4 {
     font-size: 1em;
 }
+
+/* Media */
+@media (max-width: 768px) {
+.sidebar{
+    left: -190px;
+}
+.sidebar a span{
+    display: none;
+}
+.sidebar{
+    background: rgba(119, 115, 115, 0.212);
+    margin-top: 70px;
+    padding-top: 30px;
+    position: fixed;
+    left: 0;
+    width: auto;
+    height: 100%;
+    transition: 0.5s;
+    transition-property: left;
+    overflow-y: auto;
+}
+.content{
+    margin-left: 100px;
+}
+}
