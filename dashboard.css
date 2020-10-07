@@ -42,3 +42,16 @@
     width: 35%;
     float: right;
 }
+
+@media (max-width: 768px) {
+    .person-bio, .list-of-records {
+        float: none;
+        display: block;
+        width: 80%;
+        text-align: center;
+    }
+    .news-letter p, .news-letter ul {
+        padding: 3px 15px;
+    }
+
+}
