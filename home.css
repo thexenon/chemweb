@@ -109,6 +109,7 @@ label #sidebar_btn:hover{
 }
 #container {
     min-height: 100ch;
+    overflow-x: scroll;
 }
 
 #check:checked ~ .content{
@@ -152,6 +153,7 @@ ul li:hover ul li {
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
     align-items: center;
+    overflow-x: scroll;
 }
 
 /* Slides page*/
