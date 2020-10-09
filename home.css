@@ -151,11 +151,7 @@ ul li:hover ul li {
 .foot {
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
-    grid-template-rows: ;
     align-items: center;
-}
-.foot-img img {
-    height: 125px;
 }
 
 /* Slides page*/
